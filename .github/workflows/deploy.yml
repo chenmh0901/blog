@@ -28,7 +28,7 @@ jobs:
         run: | 
           echo "module.exports = { 
               apps : [{ 
-                  name: 'buxtblog', 
+                  name: 'nuxtblog', 
                   script: './server/index.mjs',
                   port: '5280',
                   exec_mode: 'cluster', 
@@ -66,4 +66,4 @@ jobs:
           username: ${{ secrets.TG_USER }}
           password: ${{ secrets.TG_PASS }}
           script: |
-            /home/ubuntu/.local/share/pnpm/pm2 restart buxtblog
+            /home/ubuntu/.local/share/pnpm/pm2 restart nuxtblog
