@@ -34,6 +34,9 @@ jobs:
               exec_mode: 'cluster', 
             }" > .output/ecosystem.config.js
 
+      - name: List local output directory
+        run: ls -la .output/
+
       - name: Clear .output
         uses: appleboy/ssh-action@master
         with:
@@ -53,5 +56,5 @@ jobs:
           user: ${{ secrets.TG_USER }}
           pass: ${{ secrets.TG_PASS }}
           connect_timeout: 10s
-          local: './output/*'
+          local: '.output/*'
           remote: /home/ubuntu/niniix/.output/
