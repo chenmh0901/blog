@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build:dev": "nuxt build --dotenv .env.dev",
-    "build:prod": "nuxt build --dotenv .env.tesing",
+    "build:prod": "nuxt build --dotenv .env.testing",
     "dev": "nuxt dev --dotenv .env.dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
