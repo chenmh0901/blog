@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Build
+        run: pnpm install && pnpm build
+
+      - name: mkfile ecosystem.config.js
+        run: | 
+          echo "module.exports = { 
+            apps : [{ 
+              name: 'buxtblog', 
+              script: './server/index.mjs',
+              port: '5280',
+              exec_mode: 'cluster', 
+            }" > .output/ecosystem.config.js
+
+      - name: Clear .output
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.TG_HOST }}
+          username: ${{ secrets.TG_USER }}
+          password: ${{ secrets.TG_PASS }}
+          script: |
+            rm -rf /home/ubuntu/niniix/.output/*
+
+      - name: Deploy
+        uses: cross-the-world/scp-pipeline@master
+        env:
+          WELCOME: ssh scp ssh pipelines
+          LASTSSH: Doing something after copying
+        with:
+          host: ${{ secrets.TG_HOST }}
+          user: ${{ secrets.TG_USER }}
+          pass: ${{ secrets.TG_PASS }}
+          connect_timeout: 10s
+          local: './output/*'
+          remote: /home/ubuntu/niniix/.output/
