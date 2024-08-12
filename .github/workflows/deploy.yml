@@ -21,6 +21,9 @@ jobs:
       - name: Build
         run: pnpm install && pnpm build:prod
 
+      - name: List local output directory
+        run: ls -la ./output/
+        
       - name: mkfile ecosystem.config.js
         run: | 
           echo "module.exports = { 
@@ -51,4 +54,4 @@ jobs:
           pass: ${{ secrets.TG_PASS }}
           connect_timeout: 10s
           local: './output/*'
-          remote: /home/ubuntu/niniix/
+          remote: /home/ubuntu/niniix/.output/
