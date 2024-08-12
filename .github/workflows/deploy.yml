@@ -22,8 +22,8 @@ jobs:
         run: pnpm install && pnpm build:prod
 
       - name: List local output directory
-        run: ls -la ./output/
-        
+        run: ls -la .output/
+
       - name: mkfile ecosystem.config.js
         run: | 
           echo "module.exports = { 
