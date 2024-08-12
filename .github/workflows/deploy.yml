@@ -27,12 +27,12 @@ jobs:
       - name: mkfile ecosystem.config.js
         run: | 
           echo "module.exports = { 
-            apps : [{ 
-              name: 'buxtblog', 
-              script: './server/index.mjs',
-              port: '5280',
-              exec_mode: 'cluster', 
-            }" > .output/ecosystem.config.js
+              apps : [{ 
+                  name: 'buxtblog', 
+                  script: './server/index.mjs',
+                  port: '5280',
+                  exec_mode: 'cluster', 
+                  }" > .output/ecosystem.config.js
 
       - name: List local output directory
         run: ls -la .output/
@@ -66,4 +66,4 @@ jobs:
           username: ${{ secrets.TG_USER }}
           password: ${{ secrets.TG_PASS }}
           script: |
-            pm2 restart buxtblog
+            /home/ubuntu/.local/share/pnpm/pm2 restart buxtblog
