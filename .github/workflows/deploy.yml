@@ -58,3 +58,12 @@ jobs:
           connect_timeout: 10s
           local: '.output/*'
           remote: /home/ubuntu/niniix/.output/
+
+      - name: Restart pm2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.TG_HOST }}
+          username: ${{ secrets.TG_USER }}
+          password: ${{ secrets.TG_PASS }}
+          script: |
+            pm2 restart buxtblog
