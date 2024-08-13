@@ -38,7 +38,7 @@ import Element from '/components/badge-set/element.vue'
         </div>
       </template>
       <template #footer>
-        <a class="link-btn !bg-blue-400" target="_blank" href="">
+        <a class="link-btn !bg-blue-400" target="_blank" href="https://niniix.cn/cssanimation">
           <Icon icon="ci:building-04" />
           站点
         </a>

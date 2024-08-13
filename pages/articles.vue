@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="w-full">
     <div class="articles-hero">
       <h1 class="mb-4">笔记列表</h1>
       <div>一些学习 / 日常记录</div>
