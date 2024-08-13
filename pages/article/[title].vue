@@ -1,85 +1,73 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
+import { marked } from 'marked';
+import { GetArticleContent } from '~/composables/article';
 
 const route = useRoute()
 
 const { title } = route.params
 const { tag, time } = route.query
 
-const fileName = ref('')
-function spliceFileName() {
-  fileName.value = [title, time, tag].filter(Boolean).join('@')
-}
-onBeforeMount(spliceFileName)
+const fileName = computed(() => {
+  return [title, time, tag].filter(Boolean).join('@')
+})
+
+const render = new marked.Renderer();
+
+marked.setOptions({
+  renderer: render,
+  gfm: true,
+  pedantic: false,
+});
+
+const content = ref();
+// fetch article and marked it
+const fetch = async () => {
+  const data = await GetArticleContent(fileName.value);
+  content.value = marked(data)
+};
+
+onMounted(fetch)
 </script>
 
 <template>
-  <div class="viewer">
-    <div class="viewer-header">
-      <div class="back-articles">
-        <NuxtLink to="/articles">
-          <span>
-            ->
-          </span>
-        </NuxtLink>
-      </div>
-      <h1 class="article__title">
-        {{ title }}
-      </h1>
-    </div>
-    <div class="article__tag">
-      <div class="tag-container">
-        {{ tag }}
-      </div>
-    </div>
-    <div class="article-view">
-      <ArticleViewer :file-name="fileName" />
-    </div>
+  <div class="article-viewer">
+    <header>
+      <h1>{{ title }}</h1>
+      <p v-if="tag && time" class="info">{{ tag }}|{{ time }}</p>
+    </header>
+
+    <div class="divider" />
+
+    <div v-html="content" />
   </div>
 </template>
 
-<style coped lang="scss">
-.viewer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+<style scoped lang="scss">
+.article-viewer {
+  @apply w-full pb-48;
 
-.viewer-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
+  header {
+    @apply pb-5 pt-2;
+    @apply flex flex-col gap-6;
+  }
 
-.article__title {
-  margin: 0;
-  padding: 0;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
+  h1 {
+    @apply text-4xl font-semibold self-center;
+  }
 
-.article__tag {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.75em;
-
-  .tag-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(107 114 128);
-    background-color: #f0f0f0;
-    border-radius: 3px;
-    padding: 0.2em 0.6em; // badge-sm
+  .info {
+    @apply text-gray-500 text-xs;
+    @apply self-center;
   }
 }
 
-.article-view {
-  width: 100%;
-  padding: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.article {
+  @apply w-full card shadow-xl rounded-xl;
+}
+
+.card-body {
+  @apply shadow-sm rounded-xl;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 </style>
