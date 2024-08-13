@@ -32,7 +32,8 @@ jobs:
                   script: './server/index.mjs',
                   port: '5280',
                   exec_mode: 'cluster', 
-                  }" > .output/ecosystem.config.js
+                }]
+              }" > .output/ecosystem.config.js
 
       - name: List local output directory
         run: ls -la .output/

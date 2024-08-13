@@ -1,11 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
-    <div class="poster">
-      <h1>Poster</h1>
-      <ArticlePoster />
-    </div>
+  <div class="poster">
+    <h1>Poster</h1>
+    <ArticlePoster />
   </div>
 </template>
 
