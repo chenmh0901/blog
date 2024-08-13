@@ -8,11 +8,6 @@ const pageSets = [
     icon: 'material-symbols:folder-rounded',
   },
   {
-    href: '/post',
-    title: '上传',
-    icon: 'material-symbols:drive-folder-upload-rounded',
-  },
-  {
     href: '/books',
     title: '书单',
     icon: 'material-symbols:book-5-rounded',

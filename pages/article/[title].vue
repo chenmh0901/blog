@@ -1,30 +1,23 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { marked } from 'marked';
+import MarkdownIt from 'markdown-it'
 import { GetArticleContent } from '~/composables/article';
 
 const route = useRoute()
 
 const { title } = route.params
-const { tag, time } = route.query
+const { time } = route.query;
+const tag = route.query.tag as string || '';
 
 const fileName = computed(() => {
-  return [title, time, tag].filter(Boolean).join('@')
+  return [title, tag, time].filter(Boolean).join('@')
 })
 
-const render = new marked.Renderer();
-
-marked.setOptions({
-  renderer: render,
-  gfm: true,
-  pedantic: false,
-});
-
-const content = ref();
+const mdContent = ref('');
 // fetch article and marked it
 const fetch = async () => {
   const data = await GetArticleContent(fileName.value);
-  content.value = marked(data)
+  mdContent.value = new MarkdownIt().render(data)
 };
 
 onMounted(fetch)
@@ -34,12 +27,16 @@ onMounted(fetch)
   <div class="article-viewer">
     <header>
       <h1>{{ title }}</h1>
-      <p v-if="tag && time" class="info">{{ tag }}|{{ time }}</p>
+      <p v-if="tag && time" class="info">
+        <BadgeIcon :name="tag" size="24" class="inline-flex" />
+        <span class="text-grey-300 mx-4">|</span>
+        {{ time }}
+      </p>
     </header>
 
     <div class="divider" />
 
-    <div v-html="content" />
+    <div class="prose" v-html="mdContent" />
   </div>
 </template>
 
@@ -60,14 +57,5 @@ onMounted(fetch)
     @apply text-gray-500 text-xs;
     @apply self-center;
   }
-}
-
-.article {
-  @apply w-full card shadow-xl rounded-xl;
-}
-
-.card-body {
-  @apply shadow-sm rounded-xl;
-  background-color: rgba(255, 255, 255, 0.6);
 }
 </style>
