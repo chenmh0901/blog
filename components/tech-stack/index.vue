@@ -16,7 +16,8 @@ const blocks = [
       'element',
       'antd',
       'sass',
-      'threejs'
+      'threejs',
+      'blender'
     ]
   },
   {
@@ -57,6 +58,7 @@ const blocks = [
       'typescript',
       'c#',
       'markdown',
+      'nodejs'
     ]
   }
 ]

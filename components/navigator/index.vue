@@ -22,8 +22,8 @@ const pageSets = [
         <NuxtLink to="/">
           <button class="btn btn-ghost">
             <Icon icon="material-symbols:cloud" height="24px" />
-            <p class="navigator__title">博客 Amumu</p>
-            <p class="navigator__subtitle">一些作品和笔记</p>
+            <p class="navigator__title">博客</p>
+            <p class="navigator__subtitle">一些作品集和学习笔记</p>
           </button>
         </NuxtLink>
       </div>
