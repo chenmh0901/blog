@@ -6,8 +6,8 @@ export const getRawArticlesWithoutMapping = async () => {
   return res.data as string[]
 }
 
-export const GetArticleContent = async (name: string) => {
-  const res = await useHttp(`/article/${name}`, 'GET')
+export const GetArticleContent = async (tag: string, name: string) => {
+  const res = await useHttp(`/articles/${tag}/${name}`, 'GET')
   return res.data as string
 }
 

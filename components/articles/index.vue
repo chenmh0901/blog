@@ -65,6 +65,6 @@ onMounted(fetchAndMappingArticle)
 }
 
 .articles-list {
-  @apply flex;
+  @apply flex w-full;
 }
 </style>

@@ -44,7 +44,7 @@ const tagKeys = computed(() => Object.keys(tagGroupedArticles.value))
   }
 
   .tag-articles {
-    @apply bg-opacity-80 pl-3 pr-6 py-1 rounded-lg flex-grow;
+    @apply bg-opacity-80 pl-3 pr-6 py-1 rounded-lg;
     background: linear-gradient(135deg, rgba(215, 241, 237, 0.17), rgba(255, 245, 245, 0.59));
   }
 

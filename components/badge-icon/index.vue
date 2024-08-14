@@ -7,6 +7,7 @@ const IconBadgeType = {
   appStore: 'logos:apple-app-store',
   gitHub: 'logos:github-icon',
   html: 'logos:html-5',
+  css: 'logos:css-3',
   linux: 'logos:ubuntu',
   markdown: 'logos:markdown',
   vue: 'logos:vue',
@@ -41,6 +42,8 @@ const IconBadgeType = {
   'c#': 'logos:c-sharp',
   ps: 'logos:adobe-photoshop',
   javascript: 'logos:javascript',
+  webpack: 'logos:webpack',
+  cs: 'material-symbols:computer-rounded',
   nginx: 'logos:nginx',
   uniapp: 'png',
 }

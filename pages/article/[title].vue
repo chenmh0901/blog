@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import MarkdownIt from 'markdown-it'
-import { GetArticleContent } from '~/composables/article';
+import { GetArticleContent } from '~/composables/article'
 
 const route = useRoute()
 
@@ -16,7 +16,7 @@ const fileName = computed(() => {
 const mdContent = ref('');
 // fetch article and marked it
 const fetch = async () => {
-  const data = await GetArticleContent(fileName.value);
+  const data = await GetArticleContent(tag, fileName.value);
   mdContent.value = new MarkdownIt().render(data)
 };
 
