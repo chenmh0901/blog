@@ -30,7 +30,7 @@ onMounted(fetch)
       <p v-if="tag && time" class="info">
         <BadgeIcon :name="tag" size="24" class="inline-flex" />
         <span class="text-grey-300 mx-4">|</span>
-        {{ time }}
+        {{ formatDate(time as string) }}
       </p>
     </header>
 

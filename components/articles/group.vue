@@ -52,4 +52,8 @@ const tagKeys = computed(() => Object.keys(tagGroupedArticles.value))
     @apply flex h-[50px];
   }
 }
+
+[data-theme="dark"] .tag-articles {
+  @apply dark:bg-none;
+}
 </style>

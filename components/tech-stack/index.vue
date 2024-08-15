@@ -71,7 +71,9 @@ const blocks = [
     </h2>
     <div>个人掌握的技能和常用的开发工具 🔧 </div>
     <div class="absolute right-[-25px] top-[-22px]">
-      <Icon icon="line-md:moon-filled-alt-to-sunny-filled-loop-transition" height="120px" />
+      <!-- <Icon icon="line-md:moon-filled-alt-to-sunny-filled-loop-transition" height="120px" /> -->
+      <!-- <Icon icon="line-md:moon-filled-loop" height="120px" /> -->
+      <ThemeToggle size="120px" />
     </div>
     <div class="tech-stack__skills">
       <div v-for="block in blocks " :key="block.name" class="block">
@@ -107,5 +109,9 @@ const blocks = [
   &-item {
     @apply flex justify-between items-center gap-1 text-xs w-[100px];
   }
+}
+
+[data-theme="dark"] .tech-stack {
+  @apply dark:bg-none;
 }
 </style>

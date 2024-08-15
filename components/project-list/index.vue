@@ -133,7 +133,7 @@ import Element from '/components/badge-set/element.vue'
 
 <style scoped>
 .link-btn {
-  @apply btn btn-sm !rounded-t-lg !rounded-b-none glass font-bold;
+  @apply btn btn-sm !rounded-t-lg !rounded-b-none glass font-bold text-black;
   transition: all 0.26s;
 }
 

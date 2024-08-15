@@ -26,7 +26,7 @@ const timeSortedBooks = computed(() => {
     <tr v-for="book, index in timeSortedBooks" :key="index">
       <td>{{ book.name }}</td>
       <td>{{ book.author }}</td>
-      <td><span class="badge text-white" :class="BadgeColor[book.tag as keyof typeof BadgeColor]">{{ book.tag
+      <td><span class="badge text-white" :class="BadgeColor[book.type as keyof typeof BadgeColor]">{{ book.type
           }}</span></td>
       <td>{{ book.date }}</td>
     </tr>

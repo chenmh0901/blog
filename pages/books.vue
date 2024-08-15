@@ -27,4 +27,12 @@
     @apply rounded-xl p-6 mt-[10px] w-full bg-gray-200;
   }
 }
+
+[data-theme="dark"] .book-list {
+  @apply dark:bg-transparent;
+}
+
+[data-theme="dark"] .books-hero {
+  @apply dark:bg-transparent;
+}
 </style>

@@ -1,6 +1,6 @@
 export interface BookInfo {
   name: string;
   author: string;
-  tag: string;
+  type: string;
   date: string;
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type ArticleMeta } from '~/types/article';
-
+import { formatDate } from '~/utils/time'
 const props = defineProps<{
   articleDesc: ArticleMeta;
   showBadge: Boolean
@@ -23,7 +23,7 @@ const props = defineProps<{
       </div>
     </div>
     <div class="article-time">
-      {{ props.articleDesc.time }}
+      {{ formatDate(props.articleDesc.time) }}
     </div>
   </div>
 </template>
@@ -37,5 +37,9 @@ const props = defineProps<{
 
 .article-time {
   @apply ml-auto text-xs cursor-default;
+}
+
+[data-theme="dark"] .article-item {
+  @apply dark:text-[#f0f0f0];
 }
 </style>

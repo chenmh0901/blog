@@ -15,10 +15,12 @@
   },
   "dependencies": {
     "@nuxt/eslint": "^0.4.0",
+    "@pinia/nuxt": "^0.5.3",
     "@types/markdown-it": "^14.1.2",
     "axios": "^1.7.2",
     "markdown-it": "^14.1.0",
     "nuxt": "^3.12.1",
+    "pinia": "^2.2.1",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
   },

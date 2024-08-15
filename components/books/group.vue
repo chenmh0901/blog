@@ -17,11 +17,11 @@ const props = defineProps<{
 
 const typeGroupedBooks = computed(() => {
   return [...props.books].reduce((acc, cur) => {
-    const tag = cur.tag;
-    if (!acc[tag]) {
-      acc[tag] = [];
+    const type = cur.type;
+    if (!acc[type]) {
+      acc[type] = [];
     }
-    acc[tag].push(cur);
+    acc[type].push(cur);
     return acc;
   }, {} as Record<string, BookInfo[]>);
 });
@@ -34,8 +34,11 @@ const typeKeys = computed(() => Object.keys(typeGroupedBooks.value))
       <tr v-for="book, index in typeGroupedBooks[type]" :key="index">
         <td>{{ book.name }}</td>
         <td>{{ book.author }}</td>
-        <td><span class="badge" :class="BadgeColor[book.tag as keyof typeof BadgeColor]">{{ book.tag
-            }}</span></td>
+        <td>
+          <span class="badge text-white" :class="BadgeColor[book.type as keyof typeof BadgeColor]">
+            {{ book.type }}
+          </span>
+        </td>
         <td>{{ book.date }}</td>
       </tr>
     </template>

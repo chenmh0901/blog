@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Icon } from '@iconify/vue';
 import type { BookInfo } from '~/types/book';
 import { getBooksListCSV } from '~/composables/books';
 import BookList from './list.vue'
@@ -9,7 +10,7 @@ enum SortRule {
   Time = 'Time'
 }
 
-const { val, to } = useToggle([SortRule.Time, SortRule.Tag]);
+const { val, to } = useToggle([SortRule.Time, SortRule.Type]);
 
 const books = ref<BookInfo[]>([]);
 const fetchBooks = async () => {
@@ -23,7 +24,7 @@ const fetchBooks = async () => {
 onMounted(fetchBooks)
 </script>
 <template>
-  <div class="flex items-center gap-4">
+  <div class="flex items-center gap-4 mb-4">
     <button class="btn rounded-lg flex items-center" @click="to(SortRule.Type)">
       <span class="flex items-center gap-2">
         <Icon height="20" width="20" icon="mingcute:tag-line" />
@@ -37,15 +38,16 @@ onMounted(fetchBooks)
         <span>根据时间排序</span>
       </span>
     </button>
+    <ThemeToggle />
   </div>
   <div class="overflow-x-auto">
     <table class="table">
       <thead>
         <tr>
-          <th>书名</th>
-          <th>作者</th>
-          <th>类型</th>
-          <th>日期</th>
+          <th class="table-header">书名</th>
+          <th class="table-header">作者</th>
+          <th class="table-header">类型</th>
+          <th class="table-header">日期</th>
         </tr>
       </thead>
       <BookList v-if="val === SortRule.Time" :books="books" />
@@ -59,5 +61,9 @@ onMounted(fetchBooks)
   th {
     @apply text-lg font-bold text-gray-800;
   }
+}
+
+[data-theme="dark"] .table-header {
+  @apply dark:text-gray-300;
 }
 </style>

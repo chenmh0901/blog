@@ -34,7 +34,7 @@ onMounted(fetchAndMappingArticle)
 
 <template>
   <div class="articles">
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-4 mb-5">
       <button class="btn rounded-lg flex items-center" @click="to(SortRule.Tag)">
         <span class="flex items-center gap-2">
           <Icon height="20" width="20" icon="mingcute:tag-line" />
@@ -48,6 +48,7 @@ onMounted(fetchAndMappingArticle)
           <span>根据时间排序</span>
         </span>
       </button>
+      <ThemeToggle />
     </div>
 
     <div v-if="val === SortRule.Tag" class="articles-group">
@@ -66,5 +67,9 @@ onMounted(fetchAndMappingArticle)
 
 .articles-list {
   @apply flex w-full;
+}
+
+[data-theme="dark"] .articles-group {
+  @apply dark:bg-transparent;
 }
 </style>

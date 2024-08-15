@@ -81,4 +81,8 @@ h3 {
 footer {
   @apply absolute bottom-[0] text-gray-300 flex w-full px-8 items-end justify-end gap-4;
 }
+
+[data-theme='dark'] footer {
+  @apply dark:text-black;
+}
 </style>

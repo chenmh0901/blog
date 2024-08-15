@@ -1,17 +1,13 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
 
-const cardBackgroundStyle = {
-  background: 'linear-gradient(90deg, #ededed81 0%, #edfbff99 100%)'
-}
-
 const props = defineProps<{
   title: string;
   desc: string[];
 }>();
 </script>
 <template>
-  <div class="w-full p-6 rounded-xl" :style="cardBackgroundStyle">
+  <div class="hero-card">
     <h1 class="mb-4 flex items-center gap-1">
       <Icon icon="material-symbols:book-2-rounded" />
       {{ props.title }}
@@ -29,4 +25,13 @@ const props = defineProps<{
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.hero-card {
+  @apply w-full p-6 rounded-xl;
+  background: linear-gradient(90deg, #ededed81 0%, #edfbff99 100%)
+}
+
+[data-theme="dark"] .hero-card {
+  @apply dark:bg-none;
+}
+</style>

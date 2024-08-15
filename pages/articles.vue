@@ -23,4 +23,8 @@
 .articles {
   @apply flex flex-col items-start w-full mt-[10px];
 }
+
+[data-theme="dark"] .articles-hero {
+  @apply dark:bg-none;
+}
 </style>
