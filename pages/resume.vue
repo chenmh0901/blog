@@ -2,7 +2,13 @@
 
 </script>
 <template>
-  <div>简历制作中</div>
+  <div class="resume">
+    <Resume />
+  </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.resume {
+  @apply border border-gray-200 rounded-lg p-4;
+}
+</style>

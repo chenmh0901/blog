@@ -17,10 +17,10 @@ const props = defineProps<{
     </div>
     <div class="flex items-center gap-1">
       <span>简历入口</span>
-      <a href="/resume">
+      <NuxtLink to="/resume">
         <Icon icon="mingcute:open-door-line"
           class="text-[28px] flex items-center hover:text-purple-400 transition-all duration-300" />
-      </a>
+      </NuxtLink>
     </div>
   </div>
 </template>
