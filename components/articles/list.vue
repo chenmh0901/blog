@@ -29,4 +29,13 @@ const timeSortedArticles = computed(() => {
     @apply w-1/2 flex h-[50px] px-4 my-2;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .article-list {
+
+    .article-block {
+      @apply w-full px-0;
+    }
+  }
+}
 </style>

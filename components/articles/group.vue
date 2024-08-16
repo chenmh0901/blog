@@ -56,4 +56,12 @@ const tagKeys = computed(() => Object.keys(tagGroupedArticles.value))
 [data-theme="dark"] .tag-articles {
   @apply dark:bg-none;
 }
+
+@media screen and (max-width: 768px) {
+  .article-group {
+    .tag-group {
+      @apply w-full;
+    }
+  }
+}
 </style>

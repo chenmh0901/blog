@@ -50,12 +50,13 @@ import { Icon } from '@iconify/vue'
       <ul>
         <li>
           <Icon icon="mingcute:diamond-square-line" />
-          <strong>Fancy时代涌现(AIGC)</strong>
+          <strong>时代涌现信息科技(南京)有限公司(AIGC)</strong>
           <span class="time">2024.06 至 2024.08</span>
         </li>
 
-        <li>- 基于 Remotion 平台重构 Java + dicom 医疗信息化业务</li>
-        <li>- 负责 Vue3 + TS + Vite 医疗可视化 SPA 开发</li>
+        <li>- 基于 Remotion 引擎,采用 React + TS 将 Remotion 组件层进行重新封装,自定义组件的参数和类型以及封装组件的CSS样式和动画库,
+          最终使用 JSON 对象参数化制作视频模版</li>
+        <li>- 采用 React + Vite + Antd + TailwindCSS 构建视频模版管理平台,支持长列表触底懒加载和视频图片预览</li>
       </ul>
     </section>
     <section class="section-block">
@@ -72,67 +73,34 @@ import { Icon } from '@iconify/vue'
           <span class="time">2024.05 至今</span>
         </li>
         <li>
-          基于 Nuxt.js + daisyUI 实现的 SSG 博客模板, ,
-          性能极佳且 SEO 友好
+          基于 Nuxt.js + daisyUI + TailwindCSS 实现的 SSG 博客模板,支持Markdown编辑和预览,性能极佳且 SEO 友好
         </li>
-        <li>已整合 Solid.js 生成动态组件, 并可快速部署到 GitHub Pages 或 Vercel</li>
+        <li>采用 Github Action 支持CI/CD自动部署服务器</li>
       </ul>
 
       <ul>
         <li>
-          <Icon icon="logos:nodejs-icon-alt" />
-          <strong>GoodsCat 谷子猫</strong>
-          <a target="_blank" href="https://goodscat.net">https://goodscat.net</a>
-          <span class="time">2024.04 至 2024.07</span>
-        </li>
-        <li>
-          帮助用户快速, 舒心地完成煤炉 (mercari) 平台商品购物, 支持 OneBot, mirai,
-          WxPusher, 邮件推送
-        </li>
-        <li>前端基于 Capacitor + Nuxt.js + UnoCSS 构建多端 release & changelog 流水线，支持 PWA 机制</li>
-      </ul>
-
-      <ul>
-        <li>
-          <Icon icon="logos:nodejs-icon-alt" />
-          <strong>EachStar 创作互助平台</strong>
-          <a target="_blank" href="https://each-star.com">https://each-star.com</a>
-          <span class="time">2022.09 至 2023.03</span>
-        </li>
-        <li>
-          开源互助社区, 基于 GitHub API 开发, 致力于帮助开源项目积累初始影响力
-        </li>
-        <li>
-          技术栈为 Koa + Nuxt, 前端应用 TailwindCSS + ElementPlus 快速开发,
-          遵循标准 Git 工作流进行 CD (持续部署)
-        </li>
-      </ul>
-
-      <ul>
-        <li>
-          <Icon icon="logos:nodejs-icon-alt" />
-          <strong>TomatoMagic 魔法番茄</strong>
-          <a target="_blank" href="https://feel.nescraf.cn">https://feel.nescraf.cn</a>
+          <Icon icon="logos:react" />
+          <strong>CSSAniGallery CSS动画展览</strong>
+          <a target="_blank" href="https://niniix.cn/cssanimation">https://niniix.cn/cssanimation</a>
           <span class="time">2024.04 至 2024.06</span>
         </li>
         <li>
-          基于难易番茄钟和应用心理学开发, 引导用户利用三分法 + TODO LIST
-          帮助建立正向反馈的应用系列
+          一个简洁的 CSS 动画学习网站, 每个小 Demo 使用纯 CSS 实现丰富的动画效果和页面互动, 适合初学者学习
         </li>
-        <li>全栈 SSR + tRPC 应用，并通过 svg 算法生成 canvas 图, 用 Three.js 呈现 3D 效果</li>
+        <li>基于 React + daysiUI + TailwindCSS 构建</li>
       </ul>
 
       <ul>
         <li>
-          <Icon icon="logos:nodejs-icon-alt" />
+          <Icon icon="logos:ionic" />
           <strong>ZustCloud 校友录</strong>
-          <span class="time">2023.01 至 2024.03</span>
+          <span class="time">2023.09 至 2024.03</span>
         </li>
         <li>
-          帮助校内信息交互的多端应用, 在 Ionic(vue) + Tauri(react) 基础上面向 PC,
+          帮助校内信息交互的移动端应用, 在 Ionic(vue) + Tauri(react) 基础上面向 PC,
           H5, Android 平台持续发布
         </li>
-        <li>采用 multi-repo 进行项目管理, 将共用模块抽离为私有 npm 包</li>
       </ul>
     </section>
 
@@ -149,30 +117,29 @@ import { Icon } from '@iconify/vue'
 
         <li>
           <Icon icon="mingcute:diamond-square-line" />
-          熟悉 CSS3, Scss 预处理器, 能够熟练使用 UnoCSS / Tailwind CSS
-          进行快速开发, 常用 svg, css 动画
+          熟悉 CSS3, Scss 预处理器, 能够熟练使用 Tailwind CSS
+          进行快速开发, 常用 css 动画
         </li>
 
         <li>
           <Icon icon="mingcute:diamond-square-line" />
-          阅读过部分 Vue 源码, 熟悉 Vue 及周边生态如 Nuxt, Vite, Pinia
+          熟悉 Vue 及周边生态如 Nuxt, Vite, Pinia
         </li>
 
         <li>
           <Icon icon="mingcute:diamond-square-line" />
-          了解并常用前端工程化和构建工具, 如 Vite, ESLint, Prettier, Rollup,
+          了解并常用前端工程化和构建工具, 如 Vite, ESLint, Prettier,
           Webpack
         </li>
 
         <li>
           <Icon icon="mingcute:diamond-square-line" />
-          接触过全栈场景, 了解 Ktor, Node.js, Nest.js, Nuxt.js, Next.js
+          接触过全栈场景, 了解 Node.js, Nuxt.js
         </li>
 
         <li>
           <Icon icon="mingcute:diamond-square-line" />
-          熟悉敏捷开发的方式与流程, 了解 Git flow, GitHub Actions, Docker, CI/CD,
-          Nginx, RabbitMQ, Monorepo
+          熟悉敏捷开发的方式与流程, 了解 GitHub Actions, CI/CD, Nginx
         </li>
       </ul>
     </section>
