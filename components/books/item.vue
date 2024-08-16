@@ -22,7 +22,7 @@ defineProps<{
     <td><span class="badge text-white" :class="BadgeColor[book.type as keyof typeof BadgeColor]">{{
       book.type
     }}</span></td>
-    <td>{{ book.date }}</td>
+    <td>{{ formatDate(book.date) }}</td>
   </tr>
 </template>
 

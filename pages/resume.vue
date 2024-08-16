@@ -9,6 +9,6 @@
 
 <style scoped lang="scss">
 .resume {
-  @apply border border-gray-200 rounded-lg p-4;
+  @apply border border-gray-200 rounded-lg p-4 w-full;
 }
 </style>

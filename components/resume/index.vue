@@ -148,7 +148,7 @@ import { Icon } from '@iconify/vue'
 
 <style scoped lang="scss">
 .resume {
-  @apply pt-4 w-full;
+  @apply pt-4 w-full overflow-auto;
 
   .icon {
     @apply text-4xl pb-1 pl-1 mb-2;
@@ -222,5 +222,25 @@ import { Icon } from '@iconify/vue'
 
 .unique-border-owner {
   @apply border-t-[1px] border-dashed border-purple-600;
+}
+
+@media screen and (max-width: 768px) {
+  .resume {
+    .personal-info {
+      a {
+        @apply w-full;
+      }
+    }
+  }
+
+  .section-block {
+    a {
+      display: none
+    }
+
+    .time {
+      @apply block;
+    }
+  }
 }
 </style>
