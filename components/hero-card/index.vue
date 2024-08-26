@@ -15,13 +15,6 @@ const props = defineProps<{
     <div v-for="item, index in props.desc" :key="index" class="mb-1">
       {{ item }}
     </div>
-    <div class="flex items-center gap-1">
-      <span>简历入口</span>
-      <NuxtLink to="/resume">
-        <Icon icon="mingcute:open-door-line"
-          class="text-[28px] flex items-center hover:text-purple-400 transition-all duration-300" />
-      </NuxtLink>
-    </div>
   </div>
 </template>
 
